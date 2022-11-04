@@ -1,0 +1,401 @@
+/* Importando a fonte do projeto */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Reset CSS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Estrutura do Container Principal */
+.main-login{ background-color:#3a70d3;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    
+    /* Largura da viewport / Padrão=10000px = 100% da tela = 100vw / 1vw = 10px  :) */
+    width: 100vw;
+
+     /* Altura da viewport / segue a mesma regra da largura */
+    height: 100vh;
+   
+    /* Posicionamento por flex-box */
+    display: flex;
+
+    /* justify-content= centraliza tudo no eixo X */
+    justify-content: center;
+
+    /* align-items= centraliza tudo no eixo Y */
+    align-items: center;
+
+    padding-top: 40px;
+}
+
+.img-login{
+    width: 35vw;
+}
+
+.left-login{    background-color: rgba(255, 255, 255, 0.479);
+    
+    /* Fará com que o Container da esquerda ocupe 50% da tela */
+    /* Como a 'main-login' possui width: 100vw, 'left-login' irá ocupar 50% da LARGURA dentro da 'main-login' */
+    width: 50vw;
+
+    /* 'left-login' irá ocupar 100% da ALTURA dentro da 'main-login' */
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* flex-direction= Irá determinar a direceção dos itens dentro do Container*/
+    flex-direction: column;
+}
+
+/* Está chamando todos os 'p' dentro da 'left-login' */
+.left-login > p{
+    font-size: 1.5vw;
+    color: white;
+    padding-left: 12%;
+}
+
+
+.right-login{   background-color: rgba(255, 255, 255, 0.479);;
+
+    /* Segue a mesma ideia da 'left-login' */
+    /* Como a 'left-login' está ocupando 50% da viewport(porém sobra um espaço a direita), ao determinar width para 'right-login' de 50wv,
+    ela "empurra" a 'left-login' para a esquerda para se adequar ao tamanho da tela :) */
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center; 
+    align-items: center;   
+}
+
+.card-login{background-color: rgba(0, 0, 0, 0.61);
+    
+    /* width: 60% irá dimencionar 60% do tamanho com relação a div pai */
+    /* Ou seja, irá ser 60% com relação a 'right-login' */
+    width: 60%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    /* 'padding' preferencialmente é utilizado PIXELS 'px' */
+    padding: 30px 35px;
+
+    /* 'border-radius' também utilizar PIXELS 'px' */
+    border-radius: 20px;
+
+    /* border: (tipo da borda) (cor) (tamanho) */
+    border: solid white 5px;
+
+    /* box-shadow: (direção no eixo X) (direção pra cima ou pra baixo) (blur/transparência) (cor) */
+    box-shadow: 0px 35px 40px rgba(0, 0, 0, 0.438);
+}
+
+.card-login > h1{
+    color: white;
+    font-weight: 800;
+    margin: 0;
+}
+
+.textfield{
+    display: flex;
+
+    /* Quando se utiliza o 'flex-direction: column', os valores do 'justify-content' e 'align-items' se invertem */
+    /* Ou seja, 'justify-content' passa a posicionar o EIXO Y e 'align-items' passa a posicionar o EIXO X */
+
+    /* É COMO SE TIVESSE VIRADO A TELA DO COMPUTADOR DE LADO */
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; 
+    margin-bottom: 20px;
+    margin-top: 10px; 
+}
+
+.textfield > input{
+    width: 100%;
+
+    /* 'none'= nenhuma */
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+
+    /* 'background-color' = fundo do input */
+    background-color: whitesmoke; 
+
+    /* 'color' = cor do texto que será inserido no input */
+    color: black;
+
+    /* 'font-size' será o tamanho da fonte que será inserida dentro do input */
+    font-size: 15px;
+
+    font-weight: 500;
+
+    /* 'box-shadow' dará o sombreamento envolta do input */
+    box-shadow: 0px 35px 40px rgba(0, 0, 0, 0.438);
+
+    /* 'outiline' se refere a borda externa */
+    /* 'outiline: none;' remove uma borda que aparece quando o mouse e passado por cima do input */
+    outline: none;
+    
+    /* 'box-sizing' se as dimensões do container */
+    /* 'box-sizing: border-box' faz com que o tomanho do input seja barrado ao chegar na borda do container pai */
+    box-sizing: border-box;
+}
+
+.textfield > label{
+    width: 100%;
+    color: white;
+    font-weight: 700;
+
+    /* margem entre o 'label' e o 'input' */
+    margin-bottom: 10px;
+}
+
+
+/* '::placeholder' faz com que seja selecionado o atributo dentro da tag */
+.textfield > input::placeholder{
+    color: black;
+}
+
+.btn-login{
+
+    /* Vai ocupar 100% da tag pai */
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: 900;
+
+    /* 'text-transform: uppercase' = fará com que todas as letras fiquem maiúsculas */
+    text-transform: uppercase;
+
+    /* 'letter-spacing' = fará com que haja um espaçamento entre as letras */
+    letter-spacing: 3px;
+    background-color: grey;
+
+    /* 'cursor: pointer' = faz com que ao passar o cursor do mouse por cima do botão ele mude */
+    cursor: pointer;
+    box-shadow: 0px 20px 60px black;
+}
+
+.btn-cadastro{
+    width: 50%;
+    padding: 5px 0px;
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    color: black;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background-color: antiquewhite;
+    cursor: pointer;
+    box-shadow: 0px 20px 60px black;
+}
+
+.btn-cadastro > a{
+    text-decoration: none;
+    text-decoration-color: none;
+    width: 50%;
+    padding: 5px 0px;
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    color: black;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background-color: antiquewhite;
+    cursor: pointer;
+    box-shadow: 0px 20px 60px black;
+}
+
+/* media query é responsável por deixar o site responsivo */
+@media only screen and (max-width: 950px) {
+
+    /* Fará com que se a tela ficar menor que 950px, card login ocupe 85% da div pai */
+    .card-login{
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+   
+    /*  */
+    .main-login{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left-login{
+        width: 100%;
+    }
+}
+
+/* Header css */
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap");
+* {
+  font-family: 'Nunito', sans-serif;
+
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    overflow-x: hidden;
+  }
+
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0 9%;
+    z-index: 10000;
+    background: #3a70d3;
+  }
+
+  .header .logo {
+    font-weight: bolder;
+    color: #fff;
+    padding-top: 7.25px;
+  }
+  
+  .header .logo span {
+    color: #f00;
+  }
+  
+  .header .navbar a {
+    display: inline-block;
+    padding: 1.5rem 2rem;
+    font-size: 1.7rem;
+    color: #fff;
+  }
+  
+  .header .navbar a:hover {
+    background: #f00;
+  }
+  
+  #menu-btn {
+    font-size: 3rem;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+  }
+
+  .heading {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+  
+  .heading::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    height: .1rem;
+    width: 100%;
+    background: rgb(170, 170, 170);
+    z-index: -1;
+  }
+  
+  .heading span {
+    font-size: 3rem;
+    color: #f00;
+    background: #000;
+    padding: .5rem 1.5rem;
+    border: 0.1rem solid rgb(170, 170, 170);
+    border-radius: .5rem;
+  }
+  
+  .btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    padding-right: 3rem;
+    background: linear-gradient(130deg, rgb(1, 23, 65) 93%, transparent 90%);
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.7rem;
+  }
+  
+  .btn:hover {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  
+  @media (max-width: 768px) {
+    #menu-btn {
+      display: inline-block;
+    }
+    #menu-btn.fa-times {
+      -webkit-transform: rotate(180deg);
+              transform: rotate(180deg);
+    }
+    .header {
+      padding: 2rem;
+    }
+    .header .navbar {
+      position: absolute;
+      top: 99%;
+      left: 0;
+      right: 0;
+      background: #000;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+              clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    .header .navbar.active {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+              clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    .header .navbar a {
+      display: block;
+      font-size: 2rem;
+    }
+    .about {
+      gap: 3rem;
+    }
+    .about .image {
+      margin-top: 5rem;
+    }
+    .about .content .title {
+      font-size: 3rem;
+    }
+    .features .box-container .box.second {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-flow: column;
+              flex-flow: column;
+    }
+  }
